@@ -1,6 +1,5 @@
 import hashlib
 
-import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -27,7 +26,7 @@ if not admin:
 
 db1.close()
 
-app = FastAPI(docs_url=None, redoc_url=None)
+app = FastAPI(docs_url="api/py/docs")
 
 app.add_middleware(
     CORSMiddleware,
@@ -37,9 +36,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(router=auth_route, prefix="/auth", tags=["Login"])
-app.include_router(router=user_router, prefix="/user", tags=["Users"])
-
-
-if __name__ == "__main__":
-    uvicorn.run("__main__:api", host="0.0.0.0", port=8000, reload=True)
+app.include_router(router=auth_route, prefix="api/py/auth", tags=["Login"])
+app.include_router(router=user_router, prefix="api/py/user", tags=["Users"])
