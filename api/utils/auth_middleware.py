@@ -5,7 +5,7 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.security import OAuth2PasswordBearer
 from jwt import PyJWTError
 
-from app.utils.constants import SECRET_KEY, ALGORITHM
+from api.utils.constants import SECRET_KEY, ALGORITHM
 
 app = FastAPI()
 

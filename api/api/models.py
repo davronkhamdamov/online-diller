@@ -3,7 +3,7 @@ import uuid
 
 from sqlalchemy import Column, UUID, String, DateTime, Integer
 
-from app.db import Base, engine
+from api.db import Base, engine
 
 
 class Users(Base):

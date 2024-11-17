@@ -4,10 +4,10 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.auth.router import router as auth_route
-from app.api.models import Staffs
-from app.api.users.router import router as user_router
-from app.db import db1
+from api.api.auth.router import router as auth_route
+from api.api.models import Staffs
+from api.api.users.router import router as user_router
+from api.db import db1
 
 admin = db1.query(Staffs).filter(Staffs.login == "admin").first()
 
@@ -42,4 +42,4 @@ app.include_router(router=user_router, prefix="/user", tags=["Users"])
 
 
 if __name__ == "__main__":
-    uvicorn.run("__main__:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("__main__:api", host="0.0.0.0", port=8000, reload=True)

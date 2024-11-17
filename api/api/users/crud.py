@@ -5,8 +5,8 @@ from typing import Optional
 from sqlalchemy import func, or_
 from sqlalchemy.orm import Session
 
-from app.api.models import Users
-from app.api.schemas import UserSchema
+from api.api.models import Users
+from api.api.schemas import UserSchema
 
 
 def get_user(

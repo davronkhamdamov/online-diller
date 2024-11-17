@@ -3,11 +3,11 @@ from datetime import timedelta
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from app.api.auth.crud import get_staff_from_by_login, validate_password
-from app.api.schemas import LoginSchema, Response
-from app.db import get_db
-from app.utils.auth_middleware import create_access_token
-from app.utils.constants import ACCESS_TOKEN_EXPIRE_MINUTES
+from api.api.auth.crud import get_staff_from_by_login, validate_password
+from api.api.schemas import LoginSchema, Response
+from api.db import get_db
+from api.utils.auth_middleware import create_access_token
+from api.utils.constants import ACCESS_TOKEN_EXPIRE_MINUTES
 
 router = APIRouter()
 

@@ -3,8 +3,8 @@ import uuid
 from fastapi import APIRouter, Depends, Request
 from sqlalchemy.orm import Session
 
-from app.api.schemas import Response, UserSchema
-from app.api.users.crud import (
+from api.api.schemas import Response, UserSchema
+from api.api.users.crud import (
     get_user,
     get_user_by_id,
     create_user,
@@ -13,8 +13,8 @@ from app.api.users.crud import (
     count_users,
     update_user_image,
 )
-from app.db import get_db
-from app.utils.auth_middleware import get_current_user
+from api.db import get_db
+from api.utils.auth_middleware import get_current_user
 
 router = APIRouter()
 
