@@ -26,7 +26,7 @@ if not admin:
 
 db1.close()
 
-app = FastAPI(docs_url="api/py/docs")
+app = FastAPI(docs_url="/api/py/docs")
 
 app.add_middleware(
     CORSMiddleware,
@@ -36,5 +36,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(router=auth_route, prefix="api/py/auth", tags=["Login"])
-app.include_router(router=user_router, prefix="api/py/user", tags=["Users"])
+app.include_router(router=auth_route, prefix="/api/py/auth", tags=["Login"])
+app.include_router(router=user_router, prefix="/api/py/user", tags=["Users"])
